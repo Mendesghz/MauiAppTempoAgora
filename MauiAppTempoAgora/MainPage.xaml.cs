@@ -22,30 +22,27 @@ namespace MauiAppTempoAgora
 
                     if (t != null)
                     {
-                        string dados_previsao = "";
-
-                        dados_previsao = $"Latitude: {t.lat} \n" +
-                                         $"Longitude: {t.lon} \n" +
-                                         $"Nascer do Sol: {t.sunrise} \n" +
-                                         $"Por do Sol: {t.sunset} \n" +
-                                         $"Temp Máx: {t.temp_max} \n" +
-                                         $"Temp Min: {t.temp_min} \n";
+                        string dados_previsao = $"Latitude: {t.lat} \n" +
+                                                $"Longitude: {t.lon} \n" +
+                                                $"Descrição: {t.description} ({t.main}) \n" +
+                                                $"Velocidade do Vento: {t.speed} m/s \n" +
+                                                $"Visibilidade: {t.visibility} m \n" +
+                                                $"Nascer do Sol: {t.sunrise} \n" +
+                                                $"Por do Sol: {t.sunset} \n" +
+                                                $"Temp Máx: {t.temp_max} °C \n" +
+                                                $"Temp Min: {t.temp_min} °C \n";
 
                         lbl_res.Text = dados_previsao;
-
                     }
                     else
                     {
-
                         lbl_res.Text = "Sem dados de Previsão";
                     }
-
                 }
                 else
                 {
                     lbl_res.Text = "Preencha a cidade.";
                 }
-
             }
             catch (Exception ex)
             {
@@ -53,5 +50,4 @@ namespace MauiAppTempoAgora
             }
         }
     }
-
 }
